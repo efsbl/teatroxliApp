@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	text-align: center;
+	margin-top: 5rem;
+}
+
+h3 {
+	padding: 15px;
+}
+
+form {
+	width: 100%;
+	max-width: 330px;
+	margin: auto;
+}
+
+table {
+	margin-top: 10px;
+}
+
+.navbar-brand {
+	color: #fff;
+}
+
+label {
+	margin-top: 5px;
+}
