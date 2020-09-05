@@ -1,23 +1,23 @@
 <div *ngIf="user">
-<div class="row">
-    <div class="col">
-        <h2>{{user.nombre | uppercase }} Detalles</h2>
+    <div class="row">
+        <div class="col">
+            <h2>{{user.nombre | uppercase }} Detalles</h2>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col">
-        <form action="#">
-            <label for="inputEmail">Email</label>
-            <input type="email"
-                class="form-control" name="inputEmail" [(ngModel)]="user.email" placeholder="email">
-            <label for="inputNombre">Nombre</label>
-            <input type="text"
-                class="form-control" name="inputNombre" [(ngModel)]="user.nombre" placeholder="nombre"> 
-            <label for="selPerfil">Perfil</label>
-            <input type="text"
-                class="form-control" name="inputPerfil" [(ngModel)]="user.perfil" placeholder="perfil"><br>
-            <button class="btn btn-md btn-secondary" type="submit" (click)="goBack()">Volver</button>
-        </form>
+    <div class="row">
+        <div class="col">
+            <form action="#">
+                <label for="inputEmail">Email</label>
+                <input type="email"
+                    class="form-control" name="inputEmail" [(ngModel)]="user.email" placeholder="email">
+                <label for="inputNombre">Nombre</label>
+                <input type="text"
+                    class="form-control" name="inputNombre" [(ngModel)]="user.nombre" placeholder="nombre"> 
+                <label for="selPerfil">Perfil</label>
+                <input type="text"
+                    class="form-control" name="inputPerfil" [(ngModel)]="user.perfil" placeholder="perfil"><br>
+                <button class="btn btn-md btn-secondary" type="submit" (click)="goBack()">Volver</button>
+            </form>
+        </div>
     </div>
-</div>
 </div>

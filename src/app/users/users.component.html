@@ -1,28 +1,36 @@
 
 <h2> Usuarios </h2>
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Email</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Perfil</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users" (click)="onSelect(user)">
-            <a routerLink="/users/{{user.id}}">
-                <th scope="row">{{user.id}}</th>
-            </a>
-            <td>{{user.email}}</td>
-            <td>{{user.nombre}}</td>
-            <td>{{user.perfil}}</td>
-            <td><a href="update_usuario.html">
-                    <button type="button" class="btn btn-warning btn-sm">Edit</button>
-            </a>
-                <button type="submit" class="btn btn-danger btn-sm"
-                    onclick="toConfirm()">Delete</button></td>
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-md-4">
+        <a routerLink="/users/new">
+            <button class="btn btn-success float-left">Nuevo Usuario</button>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <a routerLink="/users/{{user.id}}">
+                    <th scope="row">{{user.id}}</th>
+                </a>
+                <td>{{user.email}}</td>
+                <td>{{user.nombre}}</td>
+                <td>{{user.perfil}}</td>
+                <td>
+                    <button type="submit" class="btn btn-danger btn-sm" style="margin-left: 10px"
+                        (click)="toConfirm(user)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

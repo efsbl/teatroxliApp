@@ -1,9 +1,6 @@
 export class User {
-    id: number;
-    email: string;
-    nombre: string;
-    perfil: string;
-    // perfil: {
-    //     nombre: string;
-    // }
+    public id: number;
+    public email: string;
+    public nombre: string;
+    public perfil: string;
 }

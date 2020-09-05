@@ -3,19 +3,33 @@
         <h3>Alta de Usuario</h3>
     </div>
 </div>
-<div class="row">
-    <div class="col">
-        <form action="#">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="inputEmail" required>
-            <label for="inputNombre">Nombre</label> <input type="text" class="form-control" name="inputNombre" required>
-            <label for="selPerfil">Perfil</label>
-            <select class="form-control" id="selPerfil">
-                <option>Administrador</option>
-                <option>Operador</option>
-                <option>Participante</option>
-            </select><br>
-            <button class="btn btn-lg btn-success" type="">Crear</button>
-        </form>
+<div [hidden]="!submitted">
+    <h3>Form submitted.</h3>
+    <button class="btn btn-lg btn-secondary" type="submit" (click)="goBack()" style="margin-left: 10px">Volver</button>
+</div>
+{{diagnostic}}
+<div [hidden]="submitted">
+    <div class="row">
+        <div class="col">
+            <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email"
+                    required
+                    [(ngModel)]="model.email" name="email">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre"
+                    required
+                    [(ngModel)]="model.nombre" name="nombre">
+                <label for="perfil">Perfil</label>
+                <select class="form-control" id="perfil"
+                    required
+                    [(ngModel)]="model.perfil" name="perfil">
+                    <option *ngFor="let perfil of perfiles" [value]="perfil">{{perfil}}</option>
+                </select><br>
+                <button class="btn btn-lg btn-success"
+                [disabled]="!userForm.form.valid">Crear</button>
+                <button class="btn btn-lg btn-secondary" type="submit" (click)="goBack()" style="margin-left: 10px">Volver</button>
+            </form>
+        </div>
     </div>
 </div>

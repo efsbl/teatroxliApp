@@ -22,4 +22,13 @@ export class UsersComponent implements OnInit {
       .subscribe(users => this.users = users);
   }
 
+  toConfirm(user: User): void {
+    if(confirm("Estas seguro que deseas eliminar al usuario " + user.nombre + "?")){
+      // console.log("Implement delete functionality.");
+      this.userService.deleteUser(user).subscribe(() => {
+        this.getUsers();
+      });
+    }
+  }
+
 }
