@@ -9,8 +9,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  // private usersUrl = 'http://localhost:8080/SG-TeatroXLI/api/users';
-  private usersUrl = 'http://java.linti.unlp.edu.ar/SG-TeatroXLI/api/users';
+  private usersUrl = 'http://localhost:8080/SG-TeatroXLI/api/users';
+  // private usersUrl = 'http://java.linti.unlp.edu.ar/SG-TeatroXLI/api/users';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -41,7 +41,7 @@ export class UserService {
     // return of(USERS.find(user => user.id === id));
     const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url).pipe(
-      catchError(this.handleError<User>(`getHero id=${id}`))
+      catchError(this.handleError<User>(`getUser id=${id}`))
     );
   }
 

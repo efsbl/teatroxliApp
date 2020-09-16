@@ -4,6 +4,11 @@
     </div>
 </div>
 
+<div [hidden]="!submitted">
+    <h3>Form submitted.</h3>
+    <button class="btn btn-lg btn-secondary" type="submit" (click)="goBack()" style="margin-left: 10px">Volver</button>
+</div>
+
 <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
     <div class="form-group">
